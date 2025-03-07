@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫咪娱乐屏</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #gameCanvas {
+            flex-grow: 1;
+        }
+        .controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .controls:hover {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #showControls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #showControls:hover + .controls,
+        .controls:hover {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="showControls">⚙️</div>
+    <div class="controls">
+        <button onclick="changeScene('fish')">鱼塘场景</button>
+        <button onclick="changeScene('bugs')">虫子场景</button>
+        <button onclick="changeScene('birds')">小鸟场景</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
